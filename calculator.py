@@ -1,13 +1,20 @@
+import logging
+#logging.basicConfig(level=logging.INFO,format='%(asctime)s %(message)s')
+
 def add_numbers(first, second):
+    logging.info("Dodaję %s + %s" %(first, second))
     return first + second
 
 def odd_numbers(first,second):
+    logging.info("Odejmuję %s - %s" %(first, second))
     return first-second
 
 def multiply_numbers(first,second):
+    logging.info("Mnożę  %s * %s" %(first, second))
     return first*second
 
 def divide_numbers(first, second):
+    logging.info("Dzielę  %s / %s" %(first, second))
     return first/second
 
 def get_numbers():
@@ -42,6 +49,9 @@ while not choice:
         print("Wynik to: ", multiply_numbers(first_number,second_number))
     elif choice ==4:
         first_number, second_number = get_numbers()
+        while second_number == 0:
+            print("Niestety nie możesz dzielić przez 0")
+            first_number, second_number = get_numbers()
         print("Wynik to: ", divide_numbers(first_number,second_number))
     else:
         print("Błędny wybór, podaj liczbę z zakresu 1-4!")
