@@ -12,17 +12,25 @@ def divide_numbers(first, second):
 
 def get_numbers():
     first_number_choice = ''
-    while not first_number_choice:
-        first_number_choice = float(input("Podaj składnik 1: "))
+    while first_number_choice == '':
+        try:
+            first_number_choice = float(input("Podaj składnik 1: "))
+        except ValueError:
+            print("Wprowadź poprawną wartość liczbową!")
     second_number_choice = ''
-    while not second_number_choice :
-        second_number_choice = float(input("Podaj składnik 2: "))
+    while second_number_choice =='':
+        try:
+            second_number_choice = float(input("Podaj składnik 2: "))
+        except ValueError:
+            print("Wprowadź poprawną wartość liczbową!")
     return first_number_choice,second_number_choice
 
 choice = ''
-
 while not choice:
-    choice = int(input("Podaj działanie, posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:"))
+    try: 
+        choice = int(input("Podaj działanie, posługując się odpowiednią liczbą: 1 Dodawanie, 2 Odejmowanie, 3 Mnożenie, 4 Dzielenie:"))
+    except ValueError:
+        print("Wprowadź poprawną wartość liczbową!")
     if choice == 1:
         first_number, second_number = get_numbers()
         print("Wynik to: ", add_numbers(first_number,second_number))
