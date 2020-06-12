@@ -1,5 +1,9 @@
 # module4_2
-Second task from module of bootcamp
+Second task from module of bootcamp - implementation simple calculator. 
+You have menu with four option (add, odd, multiply and devide), and you are able to give two arguments. 
+For add and multiply it's possible to give more than two arguments and you should give them splitted by comma. 
+Each of the function returns result of choosen option. 
+Information printed on the screen uses logging package. 
 
 ## Getting Started
 This is only one file with one function, so only download to your PC.
